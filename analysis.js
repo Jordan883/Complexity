@@ -192,6 +192,11 @@ function functionName( node )
 	}
 	return "anon function @" + node.loc.start.line;
 }
+// Helper function for getting number of strings from a file builder
+function getStrings( filePath )
+{
+	return builders[filePath].Strings
+}
 
 // Helper function for allowing parameterized formatting of strings.
 if (!String.prototype.format) {
@@ -299,3 +304,4 @@ mints.toString().split(".")[0] + " " + szmin;
       }
   }
  exports.complexity = complexity;
+ exports.getStrings = getStrings;
